@@ -10,7 +10,7 @@ Google Key Management Service allows you to create, import, and manage cryptogra
 
 Google Key Management Service(KMS) in Google Cloud Platform uses OAuth 2.0 for API authentication and authorization. Authentication is the process of determining your identity. The OAuth Client ID and Client Secret are used to identify your app to Google’s OAuth servers. Authorization is the process of determining what permissions your app has against a set of resources.
 
-You can follow the steps below to secure the authentication and authorization codes in order to access the Cloud Storage API:
+You can follow the steps below to secure the authentication and authorization codes in order to access the Cloud Key Management Service(KMS) API:
 
 1.  Create a project in Google Cloud. For more information on how to create a project, see Creating and managing projects.
 2.  Inside your project, create the Client ID and Client Secret for your app. Once created, you can access the Client ID and Client Secret from the Credentials section of your project in Google Cloud Console. Make a note of these authentication credentials as you will need to copy them over to your FortiSOAR™ instance momentarily.
