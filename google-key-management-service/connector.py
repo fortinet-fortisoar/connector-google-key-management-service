@@ -10,7 +10,7 @@ from .operations import operations, _check_health
 logger = get_logger('google-key-management-service')
 
 
-class GoogleCloudStorage(Connector):
+class GoogleKeyManagementService(Connector):
     def execute(self, config, operation, params, **kwargs):
         try:
             connector_info = {"connector_name": self._info_json.get('name'),
