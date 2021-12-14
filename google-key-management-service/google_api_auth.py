@@ -24,7 +24,7 @@ except:
 REFRESH_TOKEN_FLAG = False
 
 # redirect url
-DEFAULT_REDIRECT_URL = 'https://localhost'
+DEFAULT_REDIRECT_URL = 'https://localhost/myapp'
 
 # grant types
 REFRESH_TOKEN = 'refresh_token'
