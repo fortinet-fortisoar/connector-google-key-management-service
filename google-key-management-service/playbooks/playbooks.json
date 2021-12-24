@@ -1,0 +1,1533 @@
+{
+  "type": "workflow_collections",
+  "data": [
+    {
+      "@type": "WorkflowCollection",
+      "name": "Sample - Google Key Management Service - 1.0.0",
+      "description": "Sample playbooks for \"Google Key Management Service\" connector. If you are planning to use any of the sample playbooks in your environment, ensure that you clone those playbooks and move them to a different collection, since the sample playbook collection gets deleted during connector upgrade and delete.",
+      "visible": true,
+      "image": "/api/3/images/e1b7612b-07b1-4017-9706-de3f08ddbbae",
+      "uuid": "f7069da0-488c-4a90-8584-7e53a450708b",
+      "id": 863,
+      "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+      "createDate": 1639385679,
+      "modifyUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+      "modifyDate": 1639385679,
+      "recordTags": [],
+      "workflows": [
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Locations List",
+          "aliasName": null,
+          "tag": "#google-key-management-service",
+          "description": "Retrieves a list of locations for a particular project from Google Key Management Service.",
+          "isActive": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1639385889,
+          "collection": "/api/3/workflow_collections/f7069da0-488c-4a90-8584-7e53a450708b",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/293ff914-9486-4f20-8356-1835b3f8c54c",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "53e9d9d3-912d-4c57-9b7d-c309d0fbc5b6",
+                "title": "Google Key Management Service: Get Locations List",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "293ff914-9486-4f20-8356-1835b3f8c54c",
+              "id": 22693
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Locations List",
+              "description": null,
+              "arguments": {
+                "name": "Google Key Management Service",
+                "config": "",
+                "params": {
+                  "filter": "",
+                  "pageSize": "",
+                  "pageToken": "",
+                  "project_id": "fortisoar-storage"
+                },
+                "version": "1.0.0",
+                "connector": "google-key-management-service",
+                "operation": "get_locations_list",
+                "operationTitle": "Get Locations List",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "2f613cab-0f50-443d-93d7-c63f07584101",
+              "id": 22694
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get Locations List",
+              "targetStep": "/api/3/workflow_steps/2f613cab-0f50-443d-93d7-c63f07584101",
+              "sourceStep": "/api/3/workflow_steps/293ff914-9486-4f20-8356-1835b3f8c54c",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "10c7cc4a-4de6-46f8-b784-ef8eb73e2a2d"
+            }
+          ],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "1d82aa5e-d9ca-4dae-9011-191c88707ab6",
+          "recordTags": [
+            "Google",
+            "google-key-management-service"
+          ],
+          "id": 7932,
+          "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "createDate": 1639385679,
+          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "modifyDate": 1639385888,
+          "owners": [],
+          "isPrivate": false
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get CryptoKey Version Details",
+          "aliasName": null,
+          "tag": "#google-key-management-service",
+          "description": "Retrieves the information for the specified CryptoKey version from Google Key Management Service.",
+          "isActive": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1639386367,
+          "collection": "/api/3/workflow_collections/f7069da0-488c-4a90-8584-7e53a450708b",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/eeaf87e8-14f1-40c5-ba6b-99d0ae9f21c2",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Get CryptoKey Version Details",
+              "description": null,
+              "arguments": {
+                "name": "Google Key Management Service",
+                "config": "",
+                "params": {
+                  "project_id": "fortisoar-storage",
+                  "cryptoKeyId": "first-crypto-key",
+                  "key_ring_id": "sample-keyring",
+                  "location_id": "global",
+                  "cryptoKeyVersionId": 1
+                },
+                "version": "1.0.0",
+                "connector": "google-key-management-service",
+                "operation": "get_cryptokey_version_details",
+                "operationTitle": "Get CryptoKey Version Details",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "1cdf63a9-54c9-40e4-b374-d05491aafdf9",
+              "id": 22695
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "e82ccc66-ea70-4ad1-896e-40d2e3142972",
+                "title": "Google Key Management Service: Get CryptoKey Version Details",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "eeaf87e8-14f1-40c5-ba6b-99d0ae9f21c2",
+              "id": 22696
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get CryptoKey Version Details",
+              "targetStep": "/api/3/workflow_steps/1cdf63a9-54c9-40e4-b374-d05491aafdf9",
+              "sourceStep": "/api/3/workflow_steps/eeaf87e8-14f1-40c5-ba6b-99d0ae9f21c2",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "9e18a289-ab15-4280-935b-2680e52740f3"
+            }
+          ],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "2322bd7c-ce2a-4597-990a-762c2ec641ca",
+          "recordTags": [
+            "Google",
+            "google-key-management-service"
+          ],
+          "id": 7933,
+          "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "createDate": 1639385679,
+          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "modifyDate": 1639386367,
+          "owners": [],
+          "isPrivate": false
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get CryptoKey Details",
+          "aliasName": null,
+          "tag": "#google-key-management-service",
+          "description": "Retrieves the information for the specified CryptoKey from Google Key Management Service.",
+          "isActive": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1639386232,
+          "collection": "/api/3/workflow_collections/f7069da0-488c-4a90-8584-7e53a450708b",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/791e08c5-ec47-4ef7-9806-257e6f1a93b1",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "74060ef5-a941-4a91-b8d7-1bd8ad187a1f",
+                "title": "Google Key Management Service: Get CryptoKey Details",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "791e08c5-ec47-4ef7-9806-257e6f1a93b1",
+              "id": 22697
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Get CryptoKey Details",
+              "description": null,
+              "arguments": {
+                "name": "Google Key Management Service",
+                "config": "",
+                "params": {
+                  "project_id": "fortisoar-storage",
+                  "cryptoKeyId": "first-crypto-key",
+                  "key_ring_id": "sample-keyring",
+                  "location_id": "global"
+                },
+                "version": "1.0.0",
+                "connector": "google-key-management-service",
+                "operation": "get_cryptokey_details",
+                "operationTitle": "Get CryptoKey Details",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "e9d4b3c5-6964-4669-8a7a-50e9904c3fc8",
+              "id": 22698
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get CryptoKey Details",
+              "targetStep": "/api/3/workflow_steps/e9d4b3c5-6964-4669-8a7a-50e9904c3fc8",
+              "sourceStep": "/api/3/workflow_steps/791e08c5-ec47-4ef7-9806-257e6f1a93b1",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "19cfc4ba-6678-4be2-8856-d01c3cf3c360"
+            }
+          ],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "3299aa08-feb6-4442-904e-fc7653d86a3b",
+          "recordTags": [
+            "Google",
+            "google-key-management-service"
+          ],
+          "id": 7934,
+          "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "createDate": 1639385679,
+          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "modifyDate": 1639386232,
+          "owners": [],
+          "isPrivate": false
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Encrypt CryptoKey Details",
+          "aliasName": null,
+          "tag": "#google-key-management-service",
+          "description": "Encrypt the information for the specified CryptoKey in Google Key Management Service.",
+          "isActive": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1639386652,
+          "collection": "/api/3/workflow_collections/f7069da0-488c-4a90-8584-7e53a450708b",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/dbaa992e-7f2e-4aaf-8266-1c80a81e9c7b",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Encrypt CryptoKey Details",
+              "description": null,
+              "arguments": {
+                "name": "Google Key Management Service",
+                "config": "",
+                "params": {
+                  "plaintext": "Task",
+                  "project_id": "fortisoar-storage",
+                  "cryptoKeyId": "first-crypto-key",
+                  "key_ring_id": "sample-keyring",
+                  "location_id": "global",
+                  "plaintextCrc32c": "",
+                  "additionalAuthenticatedData": "",
+                  "additionalAuthenticatedDataCrc32c": ""
+                },
+                "version": "1.0.0",
+                "connector": "google-key-management-service",
+                "operation": "encrypt_cryptokey_details",
+                "operationTitle": "Encrypt CryptoKey Details",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "6bbc22be-b14e-4252-811e-51ed90f9ea77",
+              "id": 22699
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "a57880a8-de96-42bc-b243-cfed5403c3fb",
+                "title": "Google Key Management Service: Encrypt CryptoKey Details",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "dbaa992e-7f2e-4aaf-8266-1c80a81e9c7b",
+              "id": 22700
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Encrypt CryptoKey Details",
+              "targetStep": "/api/3/workflow_steps/6bbc22be-b14e-4252-811e-51ed90f9ea77",
+              "sourceStep": "/api/3/workflow_steps/dbaa992e-7f2e-4aaf-8266-1c80a81e9c7b",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "34f8ebf8-8537-49c2-a76a-bb69a377e67a"
+            }
+          ],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "3708c8de-af31-4f2d-bf7a-d777167cda3b",
+          "recordTags": [
+            "Google",
+            "google-key-management-service"
+          ],
+          "id": 7935,
+          "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "createDate": 1639385679,
+          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "modifyDate": 1639386651,
+          "owners": [],
+          "isPrivate": false
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get KeyRing Details",
+          "aliasName": null,
+          "tag": "#google-key-management-service",
+          "description": "Retrieves the information of the specified KeyRing from Google Key Management Service.",
+          "isActive": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1639386061,
+          "collection": "/api/3/workflow_collections/f7069da0-488c-4a90-8584-7e53a450708b",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/4a95f55b-2b86-48ef-8593-ed36416dd879",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "e9eada3b-c435-47a0-9722-85f73ee39513",
+                "title": "Google Key Management Service: Get KeyRing Details",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "4a95f55b-2b86-48ef-8593-ed36416dd879",
+              "id": 22701
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Get KeyRing Details",
+              "description": null,
+              "arguments": {
+                "name": "Google Key Management Service",
+                "config": "",
+                "params": {
+                  "project_id": "fortisoar-storage",
+                  "key_ring_id": "sample-keyring",
+                  "location_id": "global"
+                },
+                "version": "1.0.0",
+                "connector": "google-key-management-service",
+                "operation": "get_keyring_details",
+                "operationTitle": "Get KeyRing Details",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "870dac46-6faa-4603-ae72-fd12d02c5e79",
+              "id": 22702
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get KeyRing Details",
+              "targetStep": "/api/3/workflow_steps/870dac46-6faa-4603-ae72-fd12d02c5e79",
+              "sourceStep": "/api/3/workflow_steps/4a95f55b-2b86-48ef-8593-ed36416dd879",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "6191e2f1-5b7f-4ddb-93ca-0743499b343d"
+            }
+          ],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "466d704c-b46e-4208-b873-b20eafacc60b",
+          "recordTags": [
+            "Google",
+            "google-key-management-service"
+          ],
+          "id": 7936,
+          "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "createDate": 1639385679,
+          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "modifyDate": 1639386060,
+          "owners": [],
+          "isPrivate": false
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Destroy CryptoKey Version",
+          "aliasName": null,
+          "tag": "#google-key-management-service",
+          "description": "Destroy the information for the specified CryptoKey version in Google Key Management Service.",
+          "isActive": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1639386409,
+          "collection": "/api/3/workflow_collections/f7069da0-488c-4a90-8584-7e53a450708b",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/fd39a0f0-b0da-4036-bf02-3cd9a5255f3c",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Destroy CryptoKey Version",
+              "description": null,
+              "arguments": {
+                "name": "Google Key Management Service",
+                "config": "",
+                "params": {
+                  "project_id": "fortisoar-storage",
+                  "cryptoKeyId": "first-crypto-key",
+                  "key_ring_id": "sample-keyring",
+                  "location_id": "global",
+                  "cryptoKeyVersionId": 1
+                },
+                "version": "1.0.0",
+                "connector": "google-key-management-service",
+                "operation": "destroy_cryptokey_version",
+                "operationTitle": "Destroy CryptoKey Version",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "30e26c29-afee-4e28-82a4-c2406e96615f",
+              "id": 22703
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "4b5a570f-40c9-4797-9c41-1e567ce7907f",
+                "title": "Google Key Management Service: Destroy CryptoKey Version",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "fd39a0f0-b0da-4036-bf02-3cd9a5255f3c",
+              "id": 22704
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Destroy CryptoKey Version",
+              "targetStep": "/api/3/workflow_steps/30e26c29-afee-4e28-82a4-c2406e96615f",
+              "sourceStep": "/api/3/workflow_steps/fd39a0f0-b0da-4036-bf02-3cd9a5255f3c",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "e2256b90-97d3-4639-baeb-c014fd9e6552"
+            }
+          ],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "6066ec20-1037-41cb-8067-d436210f4404",
+          "recordTags": [
+            "Google",
+            "google-key-management-service"
+          ],
+          "id": 7937,
+          "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "createDate": 1639385679,
+          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "modifyDate": 1639386409,
+          "owners": [],
+          "isPrivate": false
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Create CryptoKey Version",
+          "aliasName": null,
+          "tag": "#google-key-management-service",
+          "description": "Creates a new CryptoKey Version within an CryptoKey in Google Key Management Service.",
+          "isActive": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1639386286,
+          "collection": "/api/3/workflow_collections/f7069da0-488c-4a90-8584-7e53a450708b",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/72b66054-bc3c-46d6-83c3-db03ba86b788",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "b9a051d6-a35f-4d8f-90ef-a5d1d078f136",
+                "title": "Google Key Management Service: Create CryptoKey Version",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "72b66054-bc3c-46d6-83c3-db03ba86b788",
+              "id": 22705
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Create CryptoKey Version",
+              "description": null,
+              "arguments": {
+                "name": "Google Key Management Service",
+                "config": "",
+                "params": {
+                  "state": "ENABLED",
+                  "project_id": "fortisoar-storage",
+                  "cryptoKeyId": "first-crypto-key",
+                  "key_ring_id": "sample-keyring",
+                  "location_id": "global",
+                  "externalKeyUri": ""
+                },
+                "version": "1.0.0",
+                "connector": "google-key-management-service",
+                "operation": "create_cryptokey_version",
+                "operationTitle": "Create CryptoKey Version",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "a44ad417-0a25-4dfe-a22b-6418eb8a6993",
+              "id": 22706
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Create CryptoKey Version",
+              "targetStep": "/api/3/workflow_steps/a44ad417-0a25-4dfe-a22b-6418eb8a6993",
+              "sourceStep": "/api/3/workflow_steps/72b66054-bc3c-46d6-83c3-db03ba86b788",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "3e7b206b-4e9e-4a1b-8ddc-bb36fc047053"
+            }
+          ],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "6a9b5375-793b-4015-a5d4-9c5f0c9c184d",
+          "recordTags": [
+            "Google",
+            "google-key-management-service"
+          ],
+          "id": 7938,
+          "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "createDate": 1639385679,
+          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "modifyDate": 1639386285,
+          "owners": [],
+          "isPrivate": false
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get CryptoKey Version List",
+          "aliasName": null,
+          "tag": "#google-key-management-service",
+          "description": "Retrieves a list of CryptoKey Version from Google Key Management Service.",
+          "isActive": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1639386329,
+          "collection": "/api/3/workflow_collections/f7069da0-488c-4a90-8584-7e53a450708b",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/91d5573f-e9fa-44f7-aca4-dfdea714e27a",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Get CryptoKey Version List",
+              "description": null,
+              "arguments": {
+                "name": "Google Key Management Service",
+                "config": "",
+                "params": {
+                  "filter": "",
+                  "orderBy": "",
+                  "pageSize": "",
+                  "pageToken": "",
+                  "project_id": "fortisoar-storage",
+                  "cryptoKeyId": "first-crypto-key",
+                  "key_ring_id": "sample-keyring",
+                  "location_id": "global",
+                  "versionView": ""
+                },
+                "version": "1.0.0",
+                "connector": "google-key-management-service",
+                "operation": "get_cryptokey_version_list",
+                "operationTitle": "Get CryptoKey Version List",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "2352aaa3-d022-479c-b41e-6f058c131e5f",
+              "id": 22707
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "2f338e33-b586-4413-ad85-2cf7ee9ae693",
+                "title": "Google Key Management Service: Get CryptoKey Version List",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "91d5573f-e9fa-44f7-aca4-dfdea714e27a",
+              "id": 22708
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get CryptoKey Version List",
+              "targetStep": "/api/3/workflow_steps/2352aaa3-d022-479c-b41e-6f058c131e5f",
+              "sourceStep": "/api/3/workflow_steps/91d5573f-e9fa-44f7-aca4-dfdea714e27a",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "caad275d-9404-4d31-aa99-a199f543e748"
+            }
+          ],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "aac7bf0c-15de-4e45-839e-ea5078584e57",
+          "recordTags": [
+            "Google",
+            "google-key-management-service"
+          ],
+          "id": 7939,
+          "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "createDate": 1639385679,
+          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "modifyDate": 1639386329,
+          "owners": [],
+          "isPrivate": false
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Create KeyRing",
+          "aliasName": null,
+          "tag": "#google-key-management-service",
+          "description": "Creates a new KeyRing on your configured Google Key Management Service.",
+          "isActive": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1639385968,
+          "collection": "/api/3/workflow_collections/f7069da0-488c-4a90-8584-7e53a450708b",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/9e7d5a3e-c826-488b-b0f3-9e2da668f2f5",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "6dc14a6f-8607-4659-9866-0b7aee7d06d4",
+                "title": "Google Key Management Service: Create KeyRing",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "9e7d5a3e-c826-488b-b0f3-9e2da668f2f5",
+              "id": 22709
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Create KeyRing",
+              "description": null,
+              "arguments": {
+                "name": "Google Key Management Service",
+                "config": "",
+                "params": {
+                  "project_id": "fortisoar-storage",
+                  "key_ring_id": "sample-keyring",
+                  "location_id": "global"
+                },
+                "version": "1.0.0",
+                "connector": "google-key-management-service",
+                "operation": "create_keyring",
+                "operationTitle": "Create KeyRing",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "f9879ea4-40ae-494e-a446-e3b8621d5d47",
+              "id": 22710
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Create KeyRing",
+              "targetStep": "/api/3/workflow_steps/f9879ea4-40ae-494e-a446-e3b8621d5d47",
+              "sourceStep": "/api/3/workflow_steps/9e7d5a3e-c826-488b-b0f3-9e2da668f2f5",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "76e4582e-96ef-4e9f-a060-48a1e79dd8ca"
+            }
+          ],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "b6d9fbb5-f46d-4be0-82bd-44b31d758212",
+          "recordTags": [
+            "Google",
+            "google-key-management-service"
+          ],
+          "id": 7940,
+          "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "createDate": 1639385679,
+          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "modifyDate": 1639385967,
+          "owners": [],
+          "isPrivate": false
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get KeyRing List",
+          "aliasName": null,
+          "tag": "#google-key-management-service",
+          "description": "Retrieves a list of KeyRings from Google Key Management Service.",
+          "isActive": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1639385998,
+          "collection": "/api/3/workflow_collections/f7069da0-488c-4a90-8584-7e53a450708b",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/b1f48b2f-54d0-4d8d-a35c-84b377e4bd05",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "7513e10c-32bd-4790-8a6d-f319c88bbd6d",
+                "title": "Google Key Management Service: Get KeyRing List",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "b1f48b2f-54d0-4d8d-a35c-84b377e4bd05",
+              "id": 22711
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Get KeyRing List",
+              "description": null,
+              "arguments": {
+                "name": "Google Key Management Service",
+                "config": "",
+                "params": {
+                  "filter": "",
+                  "orderBy": "",
+                  "pageSize": "",
+                  "pageToken": "",
+                  "project_id": "fortisoar-storage",
+                  "location_id": "global"
+                },
+                "version": "1.0.0",
+                "connector": "google-key-management-service",
+                "operation": "get_keyring_list",
+                "operationTitle": "Get KeyRing List",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "eb5fa01d-45ef-4a02-9593-53d4660b5365",
+              "id": 22712
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get KeyRing List",
+              "targetStep": "/api/3/workflow_steps/eb5fa01d-45ef-4a02-9593-53d4660b5365",
+              "sourceStep": "/api/3/workflow_steps/b1f48b2f-54d0-4d8d-a35c-84b377e4bd05",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "ceaa766e-2b0d-4a43-b4fd-fb9751afd97d"
+            }
+          ],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "c9cb0676-407b-48da-ae67-3f1d360d39d8",
+          "recordTags": [
+            "Google",
+            "google-key-management-service"
+          ],
+          "id": 7941,
+          "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "createDate": 1639385679,
+          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "modifyDate": 1639385998,
+          "owners": [],
+          "isPrivate": false
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get CryptoKey List",
+          "aliasName": null,
+          "tag": "#google-key-management-service",
+          "description": "Retrieves a list of CryptoKeys from Google Key Management Service.",
+          "isActive": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1639386190,
+          "collection": "/api/3/workflow_collections/f7069da0-488c-4a90-8584-7e53a450708b",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/13b35a5f-43db-4bb5-ad01-a11c452a868a",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "f9fb136b-463a-4bc2-a674-419a6878eb6c",
+                "title": "Google Key Management Service: Get CryptoKey List",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "13b35a5f-43db-4bb5-ad01-a11c452a868a",
+              "id": 22713
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Get CryptoKey List",
+              "description": null,
+              "arguments": {
+                "name": "Google Key Management Service",
+                "config": "",
+                "params": {
+                  "filter": "",
+                  "orderBy": "",
+                  "pageSize": "",
+                  "pageToken": "",
+                  "project_id": "fortisoar-storage",
+                  "key_ring_id": "sample-keyring",
+                  "location_id": "global",
+                  "versionView": "FULL"
+                },
+                "version": "1.0.0",
+                "connector": "google-key-management-service",
+                "operation": "get_cryptokey_list",
+                "operationTitle": "Get CryptoKey List",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "18657018-7920-49d0-a647-043ba8d3a93f",
+              "id": 22714
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get CryptoKey List",
+              "targetStep": "/api/3/workflow_steps/18657018-7920-49d0-a647-043ba8d3a93f",
+              "sourceStep": "/api/3/workflow_steps/13b35a5f-43db-4bb5-ad01-a11c452a868a",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "fbe72614-9438-4036-8c22-7464b2a1c78b"
+            }
+          ],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "e12d8303-c194-422d-b005-0b8ff7eae7a0",
+          "recordTags": [
+            "Google",
+            "google-key-management-service"
+          ],
+          "id": 7942,
+          "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "createDate": 1639385679,
+          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "modifyDate": 1639386190,
+          "owners": [],
+          "isPrivate": false
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Restore CryptoKey Version",
+          "aliasName": null,
+          "tag": "#google-key-management-service",
+          "description": "Restore the information for the specified CryptoKey version in Google Key Management Service.",
+          "isActive": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1639386445,
+          "collection": "/api/3/workflow_collections/f7069da0-488c-4a90-8584-7e53a450708b",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/943a4854-59c3-4680-b38b-706dcb354a08",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "b350df3c-f34d-4ccd-b968-8e8cafc1c199",
+                "title": "Google Key Management Service: Restore CryptoKey Version",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "943a4854-59c3-4680-b38b-706dcb354a08",
+              "id": 22715
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Restore CryptoKey Version",
+              "description": null,
+              "arguments": {
+                "name": "Google Key Management Service",
+                "config": "",
+                "params": {
+                  "project_id": "fortisoar-storage",
+                  "cryptoKeyId": "first-crypto-key",
+                  "key_ring_id": "sample-keyring",
+                  "location_id": "global",
+                  "cryptoKeyVersionId": 1
+                },
+                "version": "1.0.0",
+                "connector": "google-key-management-service",
+                "operation": "restore_cryptokey_version",
+                "operationTitle": "Restore CryptoKey Version",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "da1dbb18-1eef-4017-a3fa-9b5e5334d960",
+              "id": 22716
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Restore CryptoKey Version",
+              "targetStep": "/api/3/workflow_steps/da1dbb18-1eef-4017-a3fa-9b5e5334d960",
+              "sourceStep": "/api/3/workflow_steps/943a4854-59c3-4680-b38b-706dcb354a08",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "ef3f3346-4b92-4d2e-a0dc-cc7850b751fe"
+            }
+          ],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "e2a8c10f-6113-4771-972d-ed56d4b6ace2",
+          "recordTags": [
+            "Google",
+            "google-key-management-service"
+          ],
+          "id": 7943,
+          "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "createDate": 1639385679,
+          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "modifyDate": 1639386445,
+          "owners": [],
+          "isPrivate": false
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Create CryptoKey",
+          "aliasName": null,
+          "tag": "#google-key-management-service",
+          "description": "Creates a new CryptoKey within an KeyRing in Google Key Management Service.",
+          "isActive": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1639386139,
+          "collection": "/api/3/workflow_collections/f7069da0-488c-4a90-8584-7e53a450708b",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/00114ff3-e183-4b24-a7d0-a983ed0dda51",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "414b4b73-52b2-490b-8e3f-10dfb1acd68d",
+                "title": "Google Key Management Service: Create CryptoKey",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "displayConditions": {
+                  "alerts": {
+                    "sort": [],
+                    "limit": 30,
+                    "logic": "AND",
+                    "filters": []
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "00114ff3-e183-4b24-a7d0-a983ed0dda51",
+              "id": 22717
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Create CryptoKey",
+              "description": null,
+              "arguments": {
+                "name": "Google Key Management Service",
+                "config": "",
+                "params": {
+                  "labels": "",
+                  "purpose": "Symmetric Encrypt/Decrypt",
+                  "algorithm": "",
+                  "project_id": "fortisoar-storage",
+                  "cryptoKeyId": "first-crypto-key",
+                  "key_ring_id": "sample-keyring",
+                  "location_id": "global",
+                  "rotationPeriod": "",
+                  "protectionLevel": "SOFTWARE",
+                  "nextRotationTime": "",
+                  "skipInitialVersionCreation": ""
+                },
+                "version": "1.0.0",
+                "connector": "google-key-management-service",
+                "operation": "create_cryptokey",
+                "operationTitle": "Create CryptoKey",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "ef9f4e17-2445-4e01-aafc-0c430a24eb47",
+              "id": 22718
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Create CryptoKey",
+              "targetStep": "/api/3/workflow_steps/ef9f4e17-2445-4e01-aafc-0c430a24eb47",
+              "sourceStep": "/api/3/workflow_steps/00114ff3-e183-4b24-a7d0-a983ed0dda51",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "9e8979cb-cc96-495e-8805-b4710d72aa29"
+            }
+          ],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "ebafe930-4d2b-4b7f-b511-b29bb4a74030",
+          "recordTags": [
+            "Google",
+            "google-key-management-service"
+          ],
+          "id": 7944,
+          "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "createDate": 1639385679,
+          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "modifyDate": 1639386138,
+          "owners": [],
+          "isPrivate": false
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Decrypt CryptoKey Details",
+          "aliasName": null,
+          "tag": "#google-key-management-service",
+          "description": "Decrypt the information for the CryptoKey that was protected by Encrypt in Google Key Management Service.",
+          "isActive": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1639386696,
+          "collection": "/api/3/workflow_collections/f7069da0-488c-4a90-8584-7e53a450708b",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/c10f2486-89cf-4024-8e67-e865fedcc33e",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Decrypt CryptoKey Details",
+              "description": null,
+              "arguments": {
+                "name": "Google Key Management Service",
+                "config": "",
+                "params": {
+                  "ciphertext": "Hello, Please create the task",
+                  "project_id": "fortisoar-storage",
+                  "cryptoKeyId": "first-crypto-key",
+                  "key_ring_id": "sample-keyring",
+                  "location_id": "global",
+                  "ciphertextCrc32c": "",
+                  "additionalAuthenticatedData": "",
+                  "additionalAuthenticatedDataCrc32c": ""
+                },
+                "version": "1.0.0",
+                "connector": "google-key-management-service",
+                "operation": "decrypt_cryptokey_details",
+                "operationTitle": "Decrypt CryptoKey Details",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "08f7fa5c-fb7f-4bc9-b1e2-e6cce83e5b71",
+              "id": 22719
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "5075f8f3-b075-4115-a2a6-59f7ee1d0115",
+                "title": "Google Key Management Service: Decrypt CryptoKey Details",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "c10f2486-89cf-4024-8e67-e865fedcc33e",
+              "id": 22720
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Decrypt CryptoKey Details",
+              "targetStep": "/api/3/workflow_steps/08f7fa5c-fb7f-4bc9-b1e2-e6cce83e5b71",
+              "sourceStep": "/api/3/workflow_steps/c10f2486-89cf-4024-8e67-e865fedcc33e",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "1d041b7f-a9d5-45f5-878e-d58ed104b613"
+            }
+          ],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "f05e359d-7c01-4d40-8810-01dd1f531f20",
+          "recordTags": [
+            "Google",
+            "google-key-management-service"
+          ],
+          "id": 7945,
+          "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "createDate": 1639385679,
+          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "modifyDate": 1639386696,
+          "owners": [],
+          "isPrivate": false
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Public key for CryptoText Version",
+          "aliasName": null,
+          "tag": "#google-key-management-service",
+          "description": "Returns the public key for the given CryptoKey Version from Google Key Management Service.",
+          "isActive": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1639386583,
+          "collection": "/api/3/workflow_collections/f7069da0-488c-4a90-8584-7e53a450708b",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/30d1f6f5-119e-4f3c-a479-903b75ca9b3d",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "3b53db9b-80ff-4866-8207-057c4a9dd0bf",
+                "title": "Google Key Management Service: Get Public key for CryptoText Version",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "30d1f6f5-119e-4f3c-a479-903b75ca9b3d",
+              "id": 22721
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Public key for CryptoText Version",
+              "description": null,
+              "arguments": {
+                "name": "Google Key Management Service",
+                "config": "",
+                "params": {
+                  "project_id": "fortisoar-storage",
+                  "cryptoKeyId": "sample-crypto-key",
+                  "key_ring_id": "sample-keyring",
+                  "location_id": "global",
+                  "cryptoKeyVersionId": 1
+                },
+                "version": "1.0.0",
+                "connector": "google-key-management-service",
+                "operation": "get_public_key_for_cryptokey_version",
+                "operationTitle": "Get Public key for CryptoText Version",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "6bf7c624-a8ad-44a4-aecd-a977d5303cb8",
+              "id": 22722
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get Public key for CryptoText Version",
+              "targetStep": "/api/3/workflow_steps/6bf7c624-a8ad-44a4-aecd-a977d5303cb8",
+              "sourceStep": "/api/3/workflow_steps/30d1f6f5-119e-4f3c-a479-903b75ca9b3d",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "fc54bd8c-fcb1-421a-9d20-c2995d9c7ead"
+            }
+          ],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "fe1bbc14-4aed-4763-a8d7-f3cdb26f4202",
+          "recordTags": [
+            "Google",
+            "google-key-management-service"
+          ],
+          "id": 7946,
+          "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "createDate": 1639385679,
+          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "modifyDate": 1639386583,
+          "owners": [],
+          "isPrivate": false
+        }
+      ]
+    }
+  ],
+  "exported_tags": [
+    "Google",
+    "google-key-management-service"
+  ]
+}
