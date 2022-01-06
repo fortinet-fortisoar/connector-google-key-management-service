@@ -9,7 +9,7 @@
   "category": "Network Security",
   "icon_small_name": "small.png",
   "icon_large_name": "large.png",
-  "help_online": "",
+  "help_online": "https://docs.fortinet.com/document/fortisoar/1.0.0/google-key-management-service/214/google-key-management-service-v1-0-0",
   "configuration": {
     "fields": [
       {
@@ -19,7 +19,7 @@
         "required": true,
         "editable": true,
         "visible": true,
-        "description": "URL of the Google Key Management Service endpoint server to which you will connect and perform the automated operations.",
+        "description": "The service-based URI to which you will connect and perform the automated operations.",
         "value": "https://cloudkms.googleapis.com"
       },
       {
@@ -29,7 +29,7 @@
         "visible": true,
         "type": "text",
         "name": "client_id",
-        "description": "Unique Client ID of the Google Key Management Service that is used to create an authentication token required to access the API."
+        "description": "Unique Client ID of the Google Key Management Service that is used to create an authentication token required to access the Google Key Management Service API."
       },
       {
         "title": "Client Secret",
@@ -38,7 +38,7 @@
         "visible": true,
         "type": "password",
         "name": "client_secret",
-        "description": "Unique Client Secret of the Google Key Management Service that is used to create an authentication token required to access the API. For information, see Using OAuth 2.0 for Web Server Applications."
+        "description": "Unique Client Secret of the Google Key Management Service that is used to create an authentication token required to access the API. For information on how to get the client secret, see https://developers.google.com/identity/protocols/oauth2/web-server."
       },
       {
         "title": "Authorization Code",
@@ -47,8 +47,8 @@
         "visible": true,
         "type": "password",
         "name": "code",
-        "tooltip": "The authorization code that you acquired during the authorization step. For more information, see Accessing the Google Key Management Service API.",
-        "description": "The authorization code that you acquired during the authorization step. For more information, see Accessing the Google Key Management Service API."
+        "tooltip": "The authorization code that you acquired during the authorization step. For more information, see the Accessing the Google Key Management Service API section.",
+        "description": "The authorization code that you acquired during the authorization step. For more information, see the Accessing the Google Key Management Service API section."
       },
       {
         "title": "Redirect URL",
@@ -77,14 +77,14 @@
     {
       "operation": "get_locations_list",
       "title": "Get Locations List",
-      "description": "Retrieves a list of locations for a particular project from Google Key Management Service.",
+      "description": "Retrieves a list of locations for a particular project from Google Key Management Service based on the project ID and other input parameters you have specified.",
       "category": "investigation",
       "annotation": "get_locations_list",
       "enabled": true,
       "parameters": [
         {
           "title": "Project ID",
-          "description": "ID of the project whose associated locations you want to retrieve from Google Key Management Service.",
+          "description": "The ID of the project whose associated locations you want to retrieve from Google Key Management Service.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -93,7 +93,7 @@
         },
         {
           "title": "Page Size",
-          "description": "(Optional) Maximum number of results, per page, that this operation should return.",
+          "description": "(Optional) The maximum number of results, per page, that this operation should return.",
           "required": false,
           "editable": true,
           "visible": true,
@@ -102,18 +102,18 @@
         },
         {
           "title": "Filter",
-          "description": "(Optional) Filter based on which you want to retrieve locations from Google Key Management Service. For information on how to filter the locations, see 'https://google.aip.dev/160'.",
+          "description": "(Optional) Filter using which you want to retrieve locations from Google Key Management Service. For information on how to filter the locations, see https://google.aip.dev/160.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "filter",
           "placeholder": "e.g displayName=india",
-          "tooltip": "Filter based on which you want to retrieve locations from Google Key Management Service. For information on how to filter the locations, see 'https://google.aip.dev/160'."
+          "tooltip": "(Optional) Filter using which you want to retrieve locations from Google Key Management Service. For information on how to filter the locations, see https://google.aip.dev/160."
         },
         {
           "title": "Page Token",
-          "description": "(Optional) NextPageToken position returned by the last request. You can use this parameter to retrieve next page records.",
+          "description": "(Optional) The next page token is used to paginate through large result sets. A next page token will be returned whenever the set of available results exceeds the current page size. You can use this parameter to retrieve the next page records.",
           "required": false,
           "editable": true,
           "visible": true,
@@ -143,14 +143,14 @@
     {
       "operation": "create_keyring",
       "title": "Create KeyRing",
-      "description": "Creates a new KeyRing on your configured Google Key Management Service.",
+      "description": "Creates a new KeyRing on your configured Google Key Management Service based on the project ID, location ID, and KeyRing ID you have specified.",
       "category": "investigation",
       "annotation": "create_keyring",
       "enabled": true,
       "parameters": [
         {
           "title": "Project ID",
-          "description": "ID of the project for which you want to create the KeyRing in Google Key Management Service.",
+          "description": "The ID of the project for which you want to create the KeyRing in Google Key Management Service.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -159,7 +159,7 @@
         },
         {
           "title": "Location ID",
-          "description": "ID of the location for which you want to create the KeyRing in Google Key Management Service.",
+          "description": "The ID of the location for which you want to create the KeyRing in Google Key Management Service.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -168,7 +168,7 @@
         },
         {
           "title": "KeyRing ID",
-          "description": "ID of the KeyRing based on which you want to create the KeyRing in Google Key Management Service.",
+          "description": "The ID of the KeyRing using which you want to create the KeyRing in Google Key Management Service.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -185,14 +185,14 @@
     {
       "operation": "get_keyring_list",
       "title": "Get KeyRing List",
-      "description": "Retrieves a list of KeyRings from Google Key Management Service.",
+      "description": "Retrieves a list of KeyRings from Google Key Management Service, based on the project ID, location ID, and other input parameters you have specified.",
       "category": "investigation",
       "annotation": "get_keyring_list",
       "enabled": true,
       "parameters": [
         {
           "title": "Project ID",
-          "description": "ID of the project whose associated KeyRings you want to retrieve from Google Key Management Service.",
+          "description": "The ID of the project whose associated KeyRings list you want to retrieve from Google Key Management Service.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -201,7 +201,7 @@
         },
         {
           "title": "Location ID",
-          "description": "ID of the location whose associated KeyRings you want to retrieve from Google Key Management Service.",
+          "description": "The ID of the location whose associated KeyRings list you want to retrieve from Google Key Management Service.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -210,7 +210,7 @@
         },
         {
           "title": "Page Size",
-          "description": "(Optional) Maximum number of results, per page, that this operation should return.",
+          "description": "(Optional) The maximum number of results, per page, that this operation should return.",
           "required": false,
           "editable": true,
           "visible": true,
@@ -219,7 +219,7 @@
         },
         {
           "title": "Page Token",
-          "description": "(Optional) NextPageToken position returned by the last request. You can use this parameter to retrieve next page records.",
+          "description": "(Optional) The next page token is used to paginate through large result sets. A next page token will be returned whenever the set of available results exceeds the current page size. You can use this parameter to retrieve the next page records.",
           "required": false,
           "editable": true,
           "visible": true,
@@ -228,23 +228,23 @@
         },
         {
           "title": "Filter",
-          "description": "(Optional) Filter based on which you want to retrieve KeyRings from Google Key Management Service. For information on how to filter the KeyRings, see 'https://cloud.google.com/kms/docs/sorting-and-filtering'.",
+          "description": "(Optional) Filter using which you want to retrieve KeyRings from Google Key Management Service. For information on how to filter the KeyRings, see https://cloud.google.com/kms/docs/sorting-and-filtering.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "filter",
-          "tooltip": "Filter based on which you want to retrieve KeyRings from Google Key Management Service. For information on how to filter the KeyRings, see 'https://cloud.google.com/kms/docs/sorting-and-filtering'."
+          "tooltip": "(Optional) Filter using which you want to retrieve KeyRings from Google Key Management Service. For information on how to filter the KeyRings, see https://cloud.google.com/kms/docs/sorting-and-filtering."
         },
         {
           "title": "Order By",
-          "description": "(Optional) Name of the field on which you want to sort the result. For information on how to order by the KeyRings, see 'https://cloud.google.com/kms/docs/sorting-and-filtering#sort'.",
+          "description": "(Optional) Name of the field using which you want to sort the result retrieved from Google Key Management Service. For information on how to order by the KeyRings, see https://cloud.google.com/kms/docs/sorting-and-filtering#sort.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "orderBy",
-          "tooltip": "(Optional) Name of the field on which you want to sort the result. For information on how to order by the KeyRings, see 'https://cloud.google.com/kms/docs/sorting-and-filtering#sort'."
+          "tooltip": "(Optional) Name of the field using which you want to sort the result retrieved from Google Key Management Service. For information on how to order by the KeyRings, see https://cloud.google.com/kms/docs/sorting-and-filtering#sort."
         }
       ],
       "output_schema": {
@@ -261,14 +261,14 @@
     {
       "operation": "get_keyring_details",
       "title": "Get KeyRing Details",
-      "description": "Retrieves the information of the specified KeyRing from Google Key Management Service.",
+      "description": "Retrieves the information for a specific KeyRing from Google Key Management Service based on the project ID, location ID, and KeyRing ID you have specified.",
       "category": "investigation",
       "annotation": "get_keyring_details",
       "enabled": true,
       "parameters": [
         {
           "title": "Project ID",
-          "description": "ID of the project whose associated KeyRing you want to retrieve from Google Key Management Service.",
+          "description": "The ID of the project whose associated KeyRing details you want to retrieve from Google Key Management Service.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -277,7 +277,7 @@
         },
         {
           "title": "Location ID",
-          "description": "ID of the location whose associated KeyRing you want to retrieve from Google Key Management Service.",
+          "description": "The ID of the location whose associated KeyRing details you want to retrieve from Google Key Management Service.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -286,7 +286,7 @@
         },
         {
           "title": "KeyRing ID",
-          "description": "ID of the KeyRing whose information you want to retrieve from Google Key Management Service.",
+          "description": "The ID of the KeyRing whose information you want to retrieve from Google Key Management Service.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -302,14 +302,14 @@
     {
       "operation": "create_cryptokey",
       "title": "Create CryptoKey",
-      "description": "Creates a new CryptoKey within an KeyRing in Google Key Management Service.",
+      "description": "Creates a new CryptoKey within a KeyRing in Google Key Management Service based on the project ID, location ID, KeyRing ID, CrytoKey ID, and other input parameters you have specified.",
       "category": "investigation",
       "annotation": "create_cryptokey",
       "enabled": true,
       "parameters": [
         {
           "title": "Project ID",
-          "description": "ID of the project for which you want to create the CryptoKey in Google Key Management Service.",
+          "description": "The ID of the project for which you want to create the CryptoKey in Google Key Management Service.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -318,7 +318,7 @@
         },
         {
           "title": "Location ID",
-          "description": "ID of the location for which you want to create the CryptoKey in Google Key Management Service.",
+          "description": "The ID of the location for which you want to create the CryptoKey in Google Key Management Service.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -327,7 +327,7 @@
         },
         {
           "title": "KeyRing ID",
-          "description": "ID of the KeyRing based on which you want to create the CryptoKey in Google Key Management Service.",
+          "description": "The ID of the KeyRing in which you want to create the CryptoKey in Google Key Management Service.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -337,7 +337,7 @@
         },
         {
           "title": "CryptoKey ID",
-          "description": "ID of the CryptoKey based on which you want to create the CryptoKey in Google Key Management Service.",
+          "description": "The ID of the CryptoKey that you want to create in Google Key Management Service.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -347,17 +347,17 @@
         },
         {
           "title": "Skip Initial Version Creation",
-          "description": "(Optional) If set to true, the request will create a CryptoKey without any CryptoKeyVersions.",
+          "description": "(Optional) Select this checkbox, if you want this request to create a CryptoKey without any CryptoKeyVersions.",
           "required": false,
           "editable": true,
           "visible": true,
-          "type": "boolean",
+          "type": "checkbox",
           "name": "skipInitialVersionCreation",
-          "tooltip": "(Optional) If set to true, the request will create a CryptoKey without any CryptoKeyVersions."
+          "tooltip": "(Optional) Select this checkbox, if you want this request to create a CryptoKey without any CryptoKeyVersions."
         },
         {
           "title": "Purpose",
-          "description": "(Optional) CryptoKeyPurpose describes the cryptographic capabilities of a CryptoKey. A given key can only be used for the operations allowed by its purpose. You can choose from the following options: Symmetric Encrypt/Decrypt, Asymmetric Sign, Asymmetric Decrypt, or MAC Signing/Verification.",
+          "description": "(Optional) Select the purpose of the CryptoKey that you want to create in Google Key Management Service. The CryptoKey purpose describes the cryptographic capabilities of a CryptoKey. A given key can only be used for the operations allowed by its purpose. You can choose from the following options: Symmetric Encrypt/Decrypt, Asymmetric Sign, Asymmetric Decrypt, or MAC Signing/Verification.",
           "required": false,
           "editable": true,
           "visible": true,
@@ -372,24 +372,24 @@
         },
         {
           "title": "Next Rotation Time",
-          "description": "(Optional) DateTime when the next scheduled rotation is due to run. At nextRotationTime, the Key Management Service automatically creates a new version of this CryptoKey and marks the new version as primary. A timestamp or a date in RFC3339 UTC \"Zulu\" format, accurate to nanoseconds. For example, \"2014-10-02T15:01:23.045123456Z\".",
+          "description": "(Optional) The DateTime of the next scheduled rotation run. At the nextRotationTime, the Key Management Service automatically creates a new version of this CryptoKey and marks the new version as primary. A timestamp or a date in RFC3339 UTC \"Zulu\" format, accurate to nanoseconds is added to the CrytoKey. For example, \"2014-10-02T15:01:23.045123456Z\".",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "datetime",
           "name": "nextRotationTime",
-          "tooltip": "(Optional) DateTime when the next scheduled rotation is due to run. At nextRotationTime, the Key Management Service automatically creates a new version of this CryptoKey and marks the new version as primary. A timestamp or a date in RFC3339 UTC \"Zulu\" format, accurate to nanoseconds. For example, \"2014-10-02T15:01:23.045123456Z\"."
+          "tooltip": "(Optional) The DateTime of the next scheduled rotation run. At the nextRotationTime, the Key Management Service automatically creates a new version of this CryptoKey and marks the new version as primary. A timestamp or a date in RFC3339 UTC \"Zulu\" format, accurate to nanoseconds is added to the CrytoKey. For example, \"2014-10-02T15:01:23.045123456Z\"."
         },
         {
           "title": "Protection Level",
-          "description": "(Optional) The Protection Level to use when creating a CryptoKeyVersion based on this template. You can choose from the following options: PROTECTION_LEVEL_UNSPECIFIED, SOFTWARE, HSM, or EXTERNAL.",
+          "description": "(Optional) The Protection Level to use when creating the CryptoKeyVersion based on this template. You can choose from the following options: PROTECTION_LEVEL_UNSPECIFIED, SOFTWARE, HSM, or EXTERNAL.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "select",
           "name": "protectionLevel",
           "value": "SOFTWARE",
-          "tooltip": "(Optional) The Protection Level to use when creating a CryptoKeyVersion based on this template. You can choose from the following options: PROTECTION_LEVEL_UNSPECIFIED, SOFTWARE, HSM, or EXTERNAL.",
+          "tooltip": "(Optional) The Protection Level to use when creating the CryptoKeyVersion based on this template. You can choose from the following options: PROTECTION_LEVEL_UNSPECIFIED, SOFTWARE, HSM, or EXTERNAL.",
           "options": [
             "PROTECTION_LEVEL_UNSPECIFIED",
             "SOFTWARE",
@@ -399,13 +399,13 @@
         },
         {
           "title": "Algorithm",
-          "description": "(Optional) Algorithm to use when creating a CryptoKeyVersion based on this template. You can choose from the following options: CRYPTO_KEY_VERSION_ALGORITHM_UNSPECIFIED, GOOGLE_SYMMETRIC_ENCRYPTION, RSA_SIGN_PSS_2048_SHA256, etc.",
+          "description": "(Optional) The Algorithm to use when creating the CryptoKeyVersion based on this template. You can choose from the options such as: CRYPTO_KEY_VERSION_ALGORITHM_UNSPECIFIED, GOOGLE_SYMMETRIC_ENCRYPTION, RSA_SIGN_PSS_2048_SHA256, etc.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "select",
           "name": "algorithm",
-          "tooltip": "(Optional) Algorithm to use when creating a CryptoKeyVersion based on this template. You can choose from the following options: CRYPTO_KEY_VERSION_ALGORITHM_UNSPECIFIED, GOOGLE_SYMMETRIC_ENCRYPTION, RSA_SIGN_PSS_2048_SHA256, etc.",
+          "tooltip": "(Optional) The Algorithm to use when creating the CryptoKeyVersion based on this template. You can choose from the options such as: CRYPTO_KEY_VERSION_ALGORITHM_UNSPECIFIED, GOOGLE_SYMMETRIC_ENCRYPTION, RSA_SIGN_PSS_2048_SHA256, etc.",
           "options": [
             "CRYPTO_KEY_VERSION_ALGORITHM_UNSPECIFIED",
             "GOOGLE_SYMMETRIC_ENCRYPTION",
@@ -429,7 +429,7 @@
         },
         {
           "title": "Labels",
-          "description": "(Optional) Labels with user-defined metadata.",
+          "description": "(Optional) Labels with user-defined metadata that you want to apply to the CryptoKey that you want to create in Google Key Management Service.",
           "required": false,
           "editable": true,
           "visible": true,
@@ -438,14 +438,14 @@
         },
         {
           "title": "Rotation Period",
-          "description": "(Optional) Time between when new key versions are generated automatically. Must between 24 hours and 876,000 hours. If Rotation Period is set, Next Rotation Time must also be set. Keys with purpose ENCRYPT_DECRYPT support automatic rotation. For other keys, this field must be omitted. A duration in seconds.",
+          "description": "(Optional) Specify the time in seconds between the automatic generation of new key versions. The rotation period must be set between 24 hours and 876,000 hours. If the rotation period is set, then the next rotation time must also be set. Keys with the purpose ENCRYPT_DECRYPT support automatic rotation. For other keys, this field must be omitted.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "rotationPeriod",
           "placeholder": "e.g 3.5s",
-          "tooltip": "(Optional) Time between when new key versions are generated automatically. Must between 24 hours and 876,000 hours. If Rotation Period is set, Next Rotation Time must also be set. Keys with purpose ENCRYPT_DECRYPT support automatic rotation. For other keys, this field must be omitted. A duration in seconds."
+          "tooltip": "(Optional) Specify the time in seconds between the automatic generation of new key versions. The rotation period must be set between 24 hours and 876,000 hours. If the rotation period is set, then the next rotation time must also be set. Keys with the purpose ENCRYPT_DECRYPT support automatic rotation. For other keys, this field must be omitted."
         }
       ],
       "output_schema": {
@@ -470,14 +470,14 @@
     {
       "operation": "get_cryptokey_list",
       "title": "Get CryptoKey List",
-      "description": "Retrieves a list of CryptoKeys from Google Key Management Service.",
+      "description": "Retrieves a list of CryptoKeys from Google Key Management Service based on the project ID, location ID, KeyRing ID, and other input parameters you have specified.",
       "category": "investigation",
       "annotation": "get_cryptokey_list",
       "enabled": true,
       "parameters": [
         {
           "title": "Project ID",
-          "description": "ID of the project whose associated CryptoKeys you want to retrieve from Google Key Management Service.",
+          "description": "The ID of the project whose associated CryptoKeys list you want to retrieve from Google Key Management Service.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -486,7 +486,7 @@
         },
         {
           "title": "Location ID",
-          "description": "ID of the location whose associated CryptoKeys you want to retrieve from Google Key Management Service.",
+          "description": "The ID of the location whose associated CryptoKeys list you want to retrieve from Google Key Management Service.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -495,7 +495,7 @@
         },
         {
           "title": "KeyRing ID",
-          "description": "ID of the KeyRing whose associated CryptoKeys you want to retrieve from Google Key Management Service.",
+          "description": "The ID of the KeyRing whose associated CryptoKeys list you want to retrieve from Google Key Management Service.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -504,7 +504,7 @@
         },
         {
           "title": "Page Size",
-          "description": "(Optional) Maximum number of results, per page, that this operation should return.",
+          "description": "(Optional) The maximum number of results, per page, that this operation should return.",
           "required": false,
           "editable": true,
           "visible": true,
@@ -513,7 +513,7 @@
         },
         {
           "title": "Version",
-          "description": "(Optional) Fields of the primary version to include in the response. You can choose from the following options: CRYPTO_KEY_VERSION_VIEW_UNSPECIFIED or FULL",
+          "description": "(Optional) Select the fields of the primary version that you want to include in the response from this operation. You can choose between the following options: CRYPTO_KEY_VERSION_VIEW_UNSPECIFIED or FULL.",
           "required": false,
           "editable": true,
           "visible": true,
@@ -526,7 +526,7 @@
         },
         {
           "title": "Page Token",
-          "description": "(Optional) NextPageToken position returned by the last request. You can use this parameter to retrieve next page records.",
+          "description": "(Optional) The next page token is used to paginate through large result sets. A next page token will be returned whenever the set of available results exceeds the current page size. You can use this parameter to retrieve the next page records.",
           "required": false,
           "editable": true,
           "visible": true,
@@ -535,23 +535,23 @@
         },
         {
           "title": "Filter",
-          "description": "(Optional) Filter based on which you want to retrieve CryptoKeys from Google Key Management Service. For information on how to filter the CryptoKeys, see 'https://cloud.google.com/kms/docs/sorting-and-filtering'.",
+          "description": "(Optional) Filter using which you want to retrieve CryptoKeys from Google Key Management Service. For information on how to filter the CryptoKeys, see https://cloud.google.com/kms/docs/sorting-and-filtering.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "filter",
-          "tooltip": "Filter based on which you want to retrieve CryptoKeys from Google Key Management Service. For information on how to filter the CryptoKeys, see 'https://cloud.google.com/kms/docs/sorting-and-filtering'."
+          "tooltip": "(Optional) Filter using which you want to retrieve CryptoKeys from Google Key Management Service. For information on how to filter the CryptoKeys, see https://cloud.google.com/kms/docs/sorting-and-filtering."
         },
         {
           "title": "Order By",
-          "description": "(Optional) Name of the field on which you want to sort the result. For information on how to order by the CryptoKeys, see 'https://cloud.google.com/kms/docs/sorting-and-filtering#sort'.",
+          "description": "(Optional) Name of the field using which you want to sort the result retrieved from Google Key Management Service. For information on how to order by the KeyRings, see https://cloud.google.com/kms/docs/sorting-and-filtering#sort.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "orderBy",
-          "tooltip": "(Optional) Name of the field on which you want to sort the result. For information on how to order by the CryptoKeys, see 'https://cloud.google.com/kms/docs/sorting-and-filtering#sort'."
+          "tooltip": "(Optional) Name of the field using which you want to sort the result retrieved from Google Key Management Service. For information on how to order by the KeyRings, see https://cloud.google.com/kms/docs/sorting-and-filtering#sort."
         }
       ],
       "output_schema": {
@@ -582,14 +582,14 @@
     {
       "operation": "get_cryptokey_details",
       "title": "Get CryptoKey Details",
-      "description": "Retrieves the information for the specified CryptoKey from Google Key Management Service.",
+      "description": "Retrieves the information for the specific CryptoKey from Google Key Management Service based on the project ID, location ID, KeyRing ID, and CrytoKey ID you have specified.",
       "category": "investigation",
       "annotation": "get_cryptokey_details",
       "enabled": true,
       "parameters": [
         {
           "title": "Project ID",
-          "description": "ID of the project whose associated CryptoKey you want to retrieve from Google Key Management Service.",
+          "description": "The ID of the project whose associated CryptoKey details you want to retrieve from Google Key Management Service.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -598,7 +598,7 @@
         },
         {
           "title": "Location ID",
-          "description": "ID of the location whose associated CryptoKey you want to retrieve from Google Key Management Service.",
+          "description": "The ID of the location whose associated CryptoKey details you want to retrieve from Google Key Management Service.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -607,7 +607,7 @@
         },
         {
           "title": "KeyRing ID",
-          "description": "ID of the KeyRing whose information you want to retrieve from Google Key Management Service.",
+          "description": "The ID of the KeyRing whose associated CryptoKey details you want to retrieve from Google Key Management Service.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -616,7 +616,7 @@
         },
         {
           "title": "CryptoKey ID",
-          "description": "ID of the CryptoKey whose information you want to retrieve from Google Key Management Service.",
+          "description": "The ID of the CryptoKey whose information you want to retrieve from Google Key Management Service.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -646,14 +646,14 @@
     {
       "operation": "decrypt_cryptokey_details",
       "title": "Decrypt CryptoKey Details",
-      "description": "Decrypt the information for the CryptoKey that was protected by Encrypt in Google Key Management Service.",
+      "description": "Decrypts the information for the specific CryptoKey that was protected by Encrypt in Google Key Management Service based on the project ID, location ID, KeyRing ID, CrytoKey ID, ciphertext, and other input parameters you have specified.",
       "category": "investigation",
       "annotation": "decrypt_cryptokey_details",
       "enabled": true,
       "parameters": [
         {
           "title": "Project ID",
-          "description": "ID of the project whose associated CryptoKey information you want to decrypt in Google Key Management Service.",
+          "description": "The ID of the project whose associated CryptoKey information you want to decrypt in Google Key Management Service.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -662,7 +662,7 @@
         },
         {
           "title": "Location ID",
-          "description": "ID of the location whose associated CryptoKey information you want to decrypt in Google Key Management Service.",
+          "description": "The ID of the location whose associated CryptoKey information you want to decrypt in Google Key Management Service.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -671,7 +671,7 @@
         },
         {
           "title": "KeyRing ID",
-          "description": "ID of the KeyRing whose information you want to decrypt in Google Key Management Service.",
+          "description": "The ID of the KeyRing whose associated CryptoKey information you want to decrypt in Google Key Management Service.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -680,7 +680,7 @@
         },
         {
           "title": "CryptoKey ID",
-          "description": "ID of the CryptoKey whose information you want to decrypt in Google Key Management Service.",
+          "description": "The ID of the CryptoKey whose information you want to decrypt in Google Key Management Service.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -689,7 +689,7 @@
         },
         {
           "title": "CipherText",
-          "description": "The ciphertext to decrypt to base64 plain text",
+          "description": "The ciphertext using which you want to decrypt the specific CryptoKey to base64 plain text in Google Key Management Service.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -698,7 +698,7 @@
         },
         {
           "title": "Additional Authenticated Data",
-          "description": "(Optional) A base64-encoded string passed to Cloud KMS as part of an encrypt or decrypt request.",
+          "description": "(Optional) A base64-encoded string that is passed to Cloud KMS as part of an encrypt or decrypt request.",
           "required": false,
           "editable": true,
           "visible": true,
@@ -707,7 +707,7 @@
         },
         {
           "title": "CipherText Crc32c",
-          "description": "(Optional) The CipherText to decrypt to simple plain text",
+          "description": "(Optional) The ciphertext using which you want to decrypt the specific CryptoKey to simple plain text in Google Key Management Service.",
           "required": false,
           "editable": true,
           "visible": true,
@@ -716,7 +716,7 @@
         },
         {
           "title": "Additional Authenticated Data Crc32c",
-          "description": "(Optional) A string passed to Cloud KMS as part of an encrypt or decrypt request.",
+          "description": "(Optional) A string that is passed to Cloud KMS as part of an encrypt or decrypt request.",
           "required": false,
           "editable": true,
           "visible": true,
@@ -729,14 +729,14 @@
     {
       "operation": "encrypt_cryptokey_details",
       "title": "Encrypt CryptoKey Details",
-      "description": "Encrypt the information for the specified CryptoKey in Google Key Management Service.",
+      "description": "Encrypts the information for the specified CryptoKey in Google Key Management Service based on the project ID, location ID, KeyRing ID, CrytoKey ID, plain text, and other input parameters you have specified.",
       "category": "investigation",
       "annotation": "encrypt_cryptokey_details",
       "enabled": true,
       "parameters": [
         {
           "title": "Project ID",
-          "description": "ID of the project whose associated CryptoKey information you want to encrypt in Google Key Management Service.",
+          "description": "The ID of the project whose associated CryptoKey information you want to encrypt in Google Key Management Service.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -745,7 +745,7 @@
         },
         {
           "title": "Location ID",
-          "description": "ID of the location whose associated CryptoKey information you want to encrypt in Google Key Management Service.",
+          "description": "The ID of the location whose associated CryptoKey information you want to encrypt in Google Key Management Service.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -754,7 +754,7 @@
         },
         {
           "title": "KeyRing ID",
-          "description": "ID of the KeyRing whose information you want to encrypt in Google Key Management Service.",
+          "description": "The ID of the KeyRing whose associated CryptoKey information you want to encrypt in Google Key Management Service.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -763,7 +763,7 @@
         },
         {
           "title": "CryptoKey ID",
-          "description": "ID of the CryptoKey whose information you want to encrypt in Google Key Management Service.",
+          "description": "The ID of the CryptoKey whose information you want to encrypt in Google Key Management Service.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -772,7 +772,7 @@
         },
         {
           "title": "PlainText",
-          "description": "The Base64 plain text to encrypt. Must be no larger than 64KiB.",
+          "description": "The Base64 plain text to encrypt in Google Key Management Service. The maximum size supported is 64KiB.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -781,7 +781,7 @@
         },
         {
           "title": "Additional Authenticated Data",
-          "description": "(Optional) A base64-encoded string passed to Cloud KMS as part of an encrypt or decrypt request.",
+          "description": "(Optional) A base64-encoded string that is passed to Cloud KMS as part of an encrypt or decrypt request.",
           "required": false,
           "editable": true,
           "visible": true,
@@ -790,7 +790,7 @@
         },
         {
           "title": "PlainText Crc32c",
-          "description": "(Optional) A string passed to Cloud KMS as part of an encrypt or decrypt request.",
+          "description": "(Optional) The simple plain text to encrypt in Google Key Management Service.",
           "required": false,
           "editable": true,
           "visible": true,
@@ -799,7 +799,7 @@
         },
         {
           "title": "Additional Authenticated Data Crc32c",
-          "description": "(Optional) A string passed to Cloud KMS as part of an encrypt or decrypt request.",
+          "description": "(Optional) A string that passed to Cloud KMS as part of an encrypt or decrypt request.",
           "required": false,
           "editable": true,
           "visible": true,
@@ -812,14 +812,14 @@
     {
       "operation": "create_cryptokey_version",
       "title": "Create CryptoKey Version",
-      "description": "Creates a new CryptoKey Version within an CryptoKey in Google Key Management Service.",
+      "description": "Creates a new CryptoKey Version within a specified CryptoKey in Google Key Management Service based on the project ID, location ID, KeyRing ID, CrytoKey ID, and other input parameters you have specified.",
       "category": "investigation",
       "annotation": "create_cryptokey_version",
       "enabled": true,
       "parameters": [
         {
           "title": "Project ID",
-          "description": "ID of the project for which you want to create the CryptoKey Version in Google Key Management Service.",
+          "description": "The ID of the project for which you want to create the CryptoKey version in Google Key Management Service.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -828,7 +828,7 @@
         },
         {
           "title": "Location ID",
-          "description": "ID of the location for which you want to create the CryptoKey Version in Google Key Management Service.",
+          "description": "The ID of the location for which you want to create the CryptoKey version in Google Key Management Service.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -837,7 +837,7 @@
         },
         {
           "title": "KeyRing ID",
-          "description": "ID of the KeyRing based on which you want to create the CryptoKey Version in Google Key Management Service.",
+          "description": "The ID of the KeyRing in which you want to create the CryptoKey version in Google Key Management Service.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -847,7 +847,7 @@
         },
         {
           "title": "CryptoKey ID",
-          "description": "ID of the CryptoKey based on which you want to create the CryptoKey Version in Google Key Management Service.",
+          "description": "The ID of the CryptoKey for which you want to create a version in Google Key Management Service.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -857,7 +857,7 @@
         },
         {
           "title": "State",
-          "description": "(Optional) The state of a CryptoKeyVersion, indicating if it can be used. You can choose from the following options: CRYPTO_KEY_VERSION_STATE_UNSPECIFIED, PENDING_GENERATION, ENABLED, DISABLED, DESTROYED, DESTROY_SCHEDULED, PENDING_IMPORT or IMPORT_FAILED.",
+          "description": "(Optional) Select the state of a CryptoKeyVersion, which indicates whether or not the created version can be used. You can choose from the following options: CRYPTO_KEY_VERSION_STATE_UNSPECIFIED, PENDING_GENERATION, ENABLED, DISABLED, DESTROYED, DESTROY_SCHEDULED, PENDING_IMPORT, or IMPORT_FAILED.",
           "required": false,
           "editable": true,
           "visible": true,
@@ -876,7 +876,7 @@
         },
         {
           "title": "External Key URI",
-          "description": "(Optional) The URI for an external resource that this CryptoKeyVersion represents.",
+          "description": "(Optional) The URI of an external resource that represents this CryptoKeyVersion.",
           "required": false,
           "editable": true,
           "visible": true,
@@ -896,14 +896,14 @@
     {
       "operation": "get_cryptokey_version_list",
       "title": "Get CryptoKey Version List",
-      "description": "Retrieves a list of CryptoKey Version from Google Key Management Service.",
+      "description": "Retrieves a list of CryptoKey Versions from Google Key Management Service based on the project ID, location ID, KeyRing ID, CrytoKey ID, and other input parameters you have specified.",
       "category": "investigation",
       "annotation": "get_cryptokey_version_list",
       "enabled": true,
       "parameters": [
         {
           "title": "Project ID",
-          "description": "ID of the project whose associated CryptoKey Version you want to retrieve from Google Key Management Service.",
+          "description": "The ID of the project whose associated CryptoKey Version you want to retrieve from Google Key Management Service.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -912,7 +912,7 @@
         },
         {
           "title": "Location ID",
-          "description": "ID of the location whose associated CryptoKey Version you want to retrieve from Google Key Management Service.",
+          "description": "The ID of the location whose associated CryptoKey Version you want to retrieve from Google Key Management Service.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -921,7 +921,7 @@
         },
         {
           "title": "KeyRing ID",
-          "description": "ID of the KeyRing whose associated CryptoKey Version you want to retrieve from Google Key Management Service.",
+          "description": "The ID of the KeyRing whose associated CryptoKey Version you want to retrieve from Google Key Management Service.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -930,7 +930,7 @@
         },
         {
           "title": "CryptoKey ID",
-          "description": "ID of the CryptoKey based on which you want to retrieve the CryptoKey Version from Google Key Management Service.",
+          "description": "The ID of the CryptoKey whose CryptoKey Version you want to retrieve from Google Key Management Service.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -939,7 +939,7 @@
         },
         {
           "title": "Page Size",
-          "description": "(Optional) Maximum number of results, per page, that this operation should return.",
+          "description": "(Optional) The maximum number of results, per page, that this operation should return.",
           "required": false,
           "editable": true,
           "visible": true,
@@ -948,7 +948,7 @@
         },
         {
           "title": "Version",
-          "description": "(Optional) Fields of the primary version to include in the response. You can choose from the following options: CRYPTO_KEY_VERSION_VIEW_UNSPECIFIED or FULL",
+          "description": "(Optional) Select the fields of the primary version that you want to include in the response from this operation. You can choose between the following options: CRYPTO_KEY_VERSION_VIEW_UNSPECIFIED or FULL.",
           "required": false,
           "editable": true,
           "visible": true,
@@ -961,7 +961,7 @@
         },
         {
           "title": "Page Token",
-          "description": "(Optional) NextPageToken position returned by the last request. You can use this parameter to retrieve next page records.",
+          "description": "(Optional) The next page token is used to paginate through large result sets. A next page token will be returned whenever the set of available results exceeds the current page size. You can use this parameter to retrieve the next page records.",
           "required": false,
           "editable": true,
           "visible": true,
@@ -970,23 +970,23 @@
         },
         {
           "title": "Filter",
-          "description": "(Optional) Filter based on which you want to retrieve CryptoKey Version from Google Key Management Service. For information on how to filter the CryptoKey Version, see 'https://cloud.google.com/kms/docs/sorting-and-filtering'.",
+          "description": "(Optional) Filter using which you want to retrieve CryptoKey Versions from Google Key Management Service. For information on how to filter the CryptoKey Versions, see https://cloud.google.com/kms/docs/sorting-and-filtering.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "filter",
-          "tooltip": "Filter based on which you want to retrieve CryptoKey Version from Google Key Management Service. For information on how to filter the CryptoKey Version, see 'https://cloud.google.com/kms/docs/sorting-and-filtering'."
+          "tooltip": "(Optional) Filter using which you want to retrieve CryptoKey Versions from Google Key Management Service. For information on how to filter the CryptoKey Versions, see https://cloud.google.com/kms/docs/sorting-and-filtering."
         },
         {
           "title": "Order By",
-          "description": "(Optional) Name of the field on which you want to sort the result. For information on how to order by the CryptoKey Version, see 'https://cloud.google.com/kms/docs/sorting-and-filtering#sort'.",
+          "description": "(Optional) Name of the field using which you want to sort the result retrieved from Google Key Management Service. For information on how to order by the CryptoKey Version, see https://cloud.google.com/kms/docs/sorting-and-filtering#sort.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "orderBy",
-          "tooltip": "(Optional) Name of the field on which you want to sort the result. For information on how to order by the CryptoKey Version, see 'https://cloud.google.com/kms/docs/sorting-and-filtering#sort'."
+          "tooltip": "(Optional) Name of the field using which you want to sort the result retrieved from Google Key Management Service. For information on how to order by the CryptoKey Version, see https://cloud.google.com/kms/docs/sorting-and-filtering#sort."
         }
       ],
       "output_schema": {
@@ -1006,14 +1006,14 @@
     {
       "operation": "get_cryptokey_version_details",
       "title": "Get CryptoKey Version Details",
-      "description": "Retrieves the information for the specified CryptoKey version from Google Key Management Service.",
+      "description": "Retrieves the information for the specific CryptoKey version from Google Key Management Service based on the project ID, location ID, KeyRing ID, CrytoKey ID, and CrytoKey Version ID you have specified.",
       "category": "investigation",
       "annotation": "get_cryptokey_version_details",
       "enabled": true,
       "parameters": [
         {
           "title": "Project ID",
-          "description": "ID of the project whose associated CryptoKey version you want to retrieve from Google Key Management Service.",
+          "description": "The ID of the project whose associated CryptoKey version details you want to retrieve from Google Key Management Service.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -1022,7 +1022,7 @@
         },
         {
           "title": "Location ID",
-          "description": "ID of the location whose associated CryptoKey version you want to retrieve from Google Key Management Service.",
+          "description": "The ID of the location whose associated CryptoKey version details you want to retrieve from Google Key Management Service.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -1031,7 +1031,7 @@
         },
         {
           "title": "KeyRing ID",
-          "description": "ID of the KeyRing whose information you want to retrieve from Google Key Management Service.",
+          "description": "The ID of the KeyRing whose associated CryptoKey version details you want to retrieve from Google Key Management Service.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -1040,7 +1040,7 @@
         },
         {
           "title": "CryptoKey ID",
-          "description": "ID of the CryptoKey whose information you want to retrieve from Google Key Management Service.",
+          "description": "The ID of the CryptoKey whose associated CryptoKey version details you want to retrieve from Google Key Management Service.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -1049,7 +1049,7 @@
         },
         {
           "title": "CryptoKey Version ID",
-          "description": "ID of the CryptoKey version whose information you want to retrieve from Google Key Management Service.",
+          "description": "The ID of the CryptoKey version whose information you want to retrieve from Google Key Management Service.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -1069,14 +1069,14 @@
     {
       "operation": "destroy_cryptokey_version",
       "title": "Destroy CryptoKey Version",
-      "description": "Destroy the information for the specified CryptoKey version in Google Key Management Service.",
+      "description": "Destroys the information for the specific CryptoKey version in Google Key Management Service based on the project ID, location ID, KeyRing ID, CrytoKey ID, and CrytoKey Version ID you have specified.",
       "category": "investigation",
       "annotation": "destroy_cryptokey_version",
       "enabled": true,
       "parameters": [
         {
           "title": "Project ID",
-          "description": "ID of the project whose associated CryptoKey version you want to destroy in Google Key Management Service.",
+          "description": "The ID of the project whose associated CryptoKey version you want to destroy in Google Key Management Service.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -1085,7 +1085,7 @@
         },
         {
           "title": "Location ID",
-          "description": "ID of the location whose associated CryptoKey version you want to destroy in Google Key Management Service.",
+          "description": "The ID of the location whose associated CryptoKey version you want to destroy in Google Key Management Service.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -1094,7 +1094,7 @@
         },
         {
           "title": "KeyRing ID",
-          "description": "ID of the KeyRing whose information you want to destroy in Google Key Management Service.",
+          "description": "The ID of the KeyRing whose associated CryptoKey version you want to destroy in Google Key Management Service.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -1103,7 +1103,7 @@
         },
         {
           "title": "CryptoKey ID",
-          "description": "ID of the CryptoKey whose information you want to destroy in Google Key Management Service.",
+          "description": "The ID of the CryptoKey whose associated CryptoKey version you want to destroy in Google Key Management Service.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -1112,7 +1112,7 @@
         },
         {
           "title": "CryptoKey Version ID",
-          "description": "ID of the CryptoKey version whose information you want to destroy in Google Key Management Service.",
+          "description": "The ID of the CryptoKey version whose information you want to destroy in Google Key Management Service.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -1133,14 +1133,14 @@
     {
       "operation": "restore_cryptokey_version",
       "title": "Restore CryptoKey Version",
-      "description": "Restore the information for the specified CryptoKey version in Google Key Management Service.",
+      "description": "Restores the information for the specific CryptoKey version in Google Key Management Service based on the project ID, location ID, KeyRing ID, CrytoKey ID, and CrytoKey Version ID you have specified.",
       "category": "investigation",
       "annotation": "restore_cryptokey_version",
       "enabled": true,
       "parameters": [
         {
           "title": "Project ID",
-          "description": "ID of the project whose associated CryptoKey version you want to restore in Google Key Management Service.",
+          "description": "The ID of the project whose associated CryptoKey version information you want to restore in Google Key Management Service.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -1149,7 +1149,7 @@
         },
         {
           "title": "Location ID",
-          "description": "ID of the location whose associated CryptoKey version you want to restore in Google Key Management Service.",
+          "description": "The ID of the location whose associated CryptoKey version information you want to restore in Google Key Management Service.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -1158,7 +1158,7 @@
         },
         {
           "title": "KeyRing ID",
-          "description": "ID of the KeyRing whose information you want to restore in Google Key Management Service.",
+          "description": "The ID of the KeyRing whose associated CryptoKey version information you want to restore in Google Key Management Service.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -1167,7 +1167,7 @@
         },
         {
           "title": "CryptoKey ID",
-          "description": "ID of the CryptoKey whose information you want to restore in Google Key Management Service.",
+          "description": "The ID of the CryptoKey whose associated CryptoKey version information you want to restore in Google Key Management Service.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -1176,7 +1176,7 @@
         },
         {
           "title": "CryptoKey Version ID",
-          "description": "ID of the CryptoKey version whose information you want to restore in Google Key Management Service.",
+          "description": "The ID of the CryptoKey version whose information you want to restore in Google Key Management Service.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -1196,14 +1196,14 @@
     {
       "operation": "get_public_key_for_cryptokey_version",
       "title": "Get Public key for CryptoText Version",
-      "description": "Returns the public key for the given CryptoKey Version from Google Key Management Service.",
+      "description": "Returns the public key for the specific CryptoKey Version from Google Key Management Service based on the project ID, location ID, KeyRing ID, CrytoKey ID, and CrytoKey Version ID you have specified.",
       "category": "investigation",
       "annotation": "get_public_key_for_cryptokey_version",
       "enabled": true,
       "parameters": [
         {
           "title": "Project ID",
-          "description": "ID of the project whose associated Public Key you want to retrieve from Google Key Management Service.",
+          "description": "The ID of the project whose associated Public Key you want to retrieve from Google Key Management Service.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -1212,7 +1212,7 @@
         },
         {
           "title": "Location ID",
-          "description": "ID of the location whose associated Public Key you want to retrieve from Google Key Management Service.",
+          "description": "The ID of the location whose associated Public Key you want to retrieve from Google Key Management Service.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -1221,7 +1221,7 @@
         },
         {
           "title": "KeyRing ID",
-          "description": "ID of the KeyRing whose information you want to retrieve from Google Key Management Service.",
+          "description": "The ID of the KeyRing whose associated Public Key you want to retrieve from Google Key Management Service.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -1230,7 +1230,7 @@
         },
         {
           "title": "CryptoKey ID",
-          "description": "ID of the CryptoKey whose information you want to retrieve from Google Key Management Service.",
+          "description": "The ID of the CryptoKey whose associated Public Key you want to retrieve from Google Key Management Service.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -1239,7 +1239,7 @@
         },
         {
           "title": "CryptoKey Version ID",
-          "description": "ID of the CryptoKey version whose information you want to retrieve from Google Key Management Service.",
+          "description": "The ID of the CryptoKey version whose Public Key you want to retrieve from Google Key Management Service.",
           "required": true,
           "editable": true,
           "visible": true,
